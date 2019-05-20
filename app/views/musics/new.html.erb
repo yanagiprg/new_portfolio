@@ -1,4 +1,4 @@
-<%= form_for @music do |f| %>
+<%= form_for :music, url: musics_path do |f| %>
   <p>Name:<%= f.text_field :name %></p>
   <input type="submit" value="submit">
 <% end %>

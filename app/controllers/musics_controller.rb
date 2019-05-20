@@ -12,7 +12,7 @@ class MusicsController < ApplicationController
   end
 
   def create
-    @music = Music.new(name: params[:name])
+    @music = Music.new(music_params)
     @music.save
     redirect_to musics_path
   end
@@ -23,9 +23,9 @@ class MusicsController < ApplicationController
 
   def update
     @music = Music.find_by(id: params[:id])
-    @music.name = params[:name]
+    @music.update(music_params)
     if @music.save
-      redirect_to :musics
+      redirect_to musics_path
     end
   end
 
@@ -33,6 +33,11 @@ class MusicsController < ApplicationController
     @music = Music.find_by(id: params[:id])
     @music.destroy
     redirect_to :musics
+  end
+
+  private
+  def music_params
+    params.require(:music).permit(:name)
   end
 
 end
