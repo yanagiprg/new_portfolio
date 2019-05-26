@@ -4,5 +4,9 @@
     <%= link_to "edit", [:edit, @music] %> |
     <%= link_to "delete", music_path(@music), method: :delete %>
   </h5>
-
+  <% if @music.image? %>
+  　　<%= image_tag @music.image.thumb.url %>
+  　<% else %>
+  　　<%= image_tag 'noimage.gif' %>
+  　<% end %>
 </div>

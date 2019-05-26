@@ -1,6 +1,7 @@
 class MusicsController < ApplicationController
   def index
     @musics = Music.all
+    @music = Music.find_by(id: params[:id])
   end
 
   def new
@@ -37,7 +38,7 @@ class MusicsController < ApplicationController
 
   private
   def music_params
-    params.require(:music).permit(:name)
+    params.require(:music).permit(:name, :image)
   end
 
 end

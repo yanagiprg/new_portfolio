@@ -1,4 +1,8 @@
 <%= form_for :music, url: music_path(@music), method: :patch do |f| %>
   <p>Name:<%= f.text_field :name %></p>
-  <input type="submit" value="Upload">
+  <%= f.label :image %>
+  <%= image_tag @music.image.thumb.url if @music.image? %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache %>
+  <input type="submit" value="Update">
 <% end %>
