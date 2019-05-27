@@ -1,4 +1,7 @@
 <%= form_for :user, url: user_path(@user), method: :patch do |f| %>
   <p>Name:<%= f.text_field :username %></p>
+  <%= image_tag @user.userimage.thumb.url if @user.userimage? %>
+  <%= f.file_field :userimage %>
+  <%= f.hidden_field :userimage_cache %>
   <input type="submit" value="Update">
 <% end %>
