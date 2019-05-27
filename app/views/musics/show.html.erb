@@ -1,0 +1,12 @@
+<div class="text text-center pt-2">
+  <h2 class="my-3"><%= @music.name %></h2>
+  <h5 class="my-2">
+    <%= link_to "edit", [:edit, @music] %> |
+    <%= link_to "delete", music_path(@music), method: :delete %>
+  </h5>
+  <% if @music.image? %>
+  　　<%= image_tag @music.image.thumb.url %>
+  　<% else %>
+  　　<%= image_tag 'noimage.gif' %>
+  　<% end %>
+</div>
