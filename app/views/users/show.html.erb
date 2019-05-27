@@ -4,9 +4,5 @@
     <%= link_to "edit", [:edit, @user] %> |
     <%= link_to "delete", user_path(@user), method: :delete %>
   </h5>
-  <% if @user.userimage? %>
   　　<%= image_tag @user.userimage.thumb.url %>
-  　<% else %>
-  　　<%= image_tag 'noimage.gif' %>
-  　<% end %>
 </div>

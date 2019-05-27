@@ -11,6 +11,10 @@
 
   <body>
     <header>
+<<<<<<< HEAD
+=======
+
+>>>>>>> login_function
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Gezellig</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +24,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
+<<<<<<< HEAD
               <a class="nav-link" href="#" class="nav-link">
+=======
+              <a class="nav-link" href="#top" class="nav-link">
+>>>>>>> login_function
                 <%= link_to 'Top', root_path %>
               </a>
             </li>
@@ -34,7 +42,11 @@
               <a class="nav-link" href="#contact" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
+<<<<<<< HEAD
               <a class="nav-link" href="#" class="nav-link">
+=======
+              <a class="nav-link" class="nav-link">
+>>>>>>> login_function
                 <%= link_to 'posting', musics_path %>
               </a>
             </li>
@@ -43,6 +55,7 @@
                 <%= link_to 'Users', users_path %>
               </a>
             </li>
+<<<<<<< HEAD
 
           </ul>
         </div>
@@ -50,5 +63,29 @@
     </header>
 
     <%= yield %>
+=======
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a class="nav-link" class="nav-link">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
+              </a>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if user_signed_in? %>
+    <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+    <% end %>
+
+    <%= yield %>
+
+>>>>>>> login_function
   </body>
 </html>
