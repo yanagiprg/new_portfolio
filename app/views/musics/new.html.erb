@@ -1,8 +1,10 @@
-<%= form_for :music, url: musics_path do |f| %>
+<div class="my-5">
+  <%= form_for :music, url: musics_path do |f| %>
   <p>Name:<%= f.text_field :name %></p>
   <%= f.label :image %>
   <%= image_tag @music.image.thumb.url if @music.image? %>
   <%= f.file_field :image %>
   <%= f.hidden_field :image_cache %>
   <input type="submit" value="Upload">
-<% end %>
+  <% end %>
+</div>
