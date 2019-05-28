@@ -1,21 +1,22 @@
-<div class="my-5">
-  <h1 class="text text-center my-5">Hardstyle</h1>
-  <h5>
-    <%= link_to "New", new_music_path %>
-  </h5>
-  <div class="row px-4">
-    <% @musics.each do |music| %>
-    <div class="box p-2 col-md-3 col-sm-4 col-xs-4">
-      <div class="inbox mx-auto pt-1 shadow rounded">
-        <% if music.image? %>
-        <%= image_tag music.image.thumb.url %>
-        <% else %>
-        <%= image_tag 'noimage.gif' %>
-        <% end %>
-        <p class="text text-center pt-2 pb-3">
-          <%= link_to music.name, music_path(music) %>
-        </p>
-      </div>
+=======
+<h1 class="text text-center my-5">Hardstyle</h1>
+<h5>
+  <%= link_to "New", new_music_path %>
+</h5>
+<div class="row px-4">
+  <% @musics.each do |music| %>
+  <div class="box p-2 col-md-3 col-sm-4 col-xs-4">
+    <div class="inbox mx-auto pt-1 shadow rounded">
+      <% if music.image? %>
+      　　<%= image_tag music.image.thumb.url %>
+      　<% else %>
+      　　<%= image_tag 'noimage.gif' %>
+      　<% end %>
+      <p class="text text-center pt-2 pb-3">
+        <%= link_to music.name, music_path(music) %>
+      </p>
     </div>
-    <% end %>
   </div>
+  <% end %>
+</div>
+>>>>>>> 0134613556bf54b4a46d4abcee9fd6f7559fa457
