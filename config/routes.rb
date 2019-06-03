@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resource :home, only: [:index]
   resources :users
   resources :musics
+  resource :session, only: [:new, :create, :destroy]
 end

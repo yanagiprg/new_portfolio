@@ -1,7 +1,4 @@
 <h1 class="text text-center my-5">Hardstylerz</h1>
-<h5>
-  <%= link_to "New", new_user_path %>
-</h5>
 <div class="row px-4">
   <% @users.each do |user| %>
   <div class="box p-2 col-md-3 col-sm-4 col-xs-4">
@@ -9,7 +6,7 @@
       <% if user.userimage? %>
       　　<%= image_tag user.userimage.thumb.url %>
       　<% else %>
-      　　<%= image_tag 'noimage.gif' %>
+      　　# image_tag 'noimage.gif' 
       　<% end %>
       <p class="text text-center pt-2 pb-3">
         <%= link_to user.username, user_path(user) %>
