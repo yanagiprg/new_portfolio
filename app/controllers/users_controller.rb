@@ -39,6 +39,26 @@ class UsersController < ApplicationController
     redirect_to :users
   end
 
+  def login_form
+  end
+
+  def login
+    user = User.find_by(username: params[:username])
+    if user&.authenticate(params[:password])
+      user.save
+      session[:user_id] = user.id
+    else
+      flash.alert = "invalid password"
+    end
+    redirect_to :root
+  end
+
+  def logout
+    session.delete(:user_id)
+    redirect_to :root
+  end
+
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :userimage, :userimage_cache)
